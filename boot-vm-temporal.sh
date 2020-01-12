@@ -20,7 +20,6 @@ sudo numactl -N 0 -m 0 /home/img/qemu-system-x86_64 \
     -device vfio-pci,sysfsdev=/sys/bus/mdev/devices/$VAI_UUID \
     -netdev tap,id=mynet0,ifname=tap$1,script=no,downscript=no \
     -device e1000,netdev=mynet0,mac=52:55:00:d1:55:f$1 \
-    -device edu \
     -serial stdio
 
 sudo su -c "echo 1 > /sys/bus/mdev/devices/$VAI_UUID/remove"
